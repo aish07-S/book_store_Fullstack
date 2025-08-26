@@ -74,7 +74,7 @@
     padding: 15px;
     border: none;
     border-radius: 8px;
-    background-color: #4A6E8A; /* A color similar to your design */
+    background-color: #4A6E8A; 
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -96,11 +96,11 @@
     font-weight: bold;
     text-decoration: none;
 
-/* ... at the end of the file ... */
+
 
 .form-message {
     font-size: 14px;
-    color: #d9534f; /* Default to an error-like color */
+    color: #d9534f; 
     background-color: #f2dede;
     border: 1px solid #ebccd1;
     padding: 10px;
@@ -109,5 +109,4 @@
     text-align: center;
 }
 
-/* We can improve this later to have different styles for success and error */
 }

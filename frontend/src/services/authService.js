@@ -14,13 +14,13 @@ const register = (userData) => {
     return axios.post(`${API_URL}/register`, userData);
 };
 
-// We will add the login function here later
+
 const login = (credentials) => {
     // return axios.post(`${API_URL}/login`, credentials);
 };
 
 
-// Export the functions to be used in other parts of the app
+
 const authService = {
     register,
     login,

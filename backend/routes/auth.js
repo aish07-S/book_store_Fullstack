@@ -20,15 +20,15 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ msg: 'User with this email already exists' });
         }
 
-        // 4. Hash the password
-        const salt = await bcrypt.genSalt(10); // Generate a "salt"
-        const hashedPassword = await bcrypt.hash(password, salt); // Hash the password with the salt
+        // 4. Hashinf the password
+        const salt = await bcrypt.genSalt(10); // Generate variabke
+        const hashedPassword = await bcrypt.hash(password, salt); // call salt variabke
 
         // 5. Insert the new user into the database
         const sql = 'INSERT INTO users (email, phone_number, password) VALUES (?, ?, ?)';
         await db.execute(sql, [email, phoneNumber, hashedPassword]);
 
-        // 6. Send a success response
+        // 6. Send a success txt
         res.status(201).json({ msg: 'User registered successfully!' });
 
     } catch (err) {

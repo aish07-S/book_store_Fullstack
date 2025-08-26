@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import authService from '../../services/authService'; // <-- IMPORT aUTH SERVICE
+import authService from '../../services/authService'; 
 import './RegisterPage.css';
 
 const RegisterPage = () => {
@@ -8,16 +8,16 @@ const RegisterPage = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     
-    // State for loading and error messages
+    // State for loading and error txt
     const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState(''); // To show success or error messages
+    const [message, setMessage] = useState(''); // To show success or error txt
 
     const navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        setMessage(''); // Clear previous messages
-        setLoading(true); // Show loading indicator
+        setMessage(''); // Clear previous txt
+        setLoading(true); // Show loading
 
         const userData = {
             email,
@@ -36,7 +36,7 @@ const RegisterPage = () => {
             // Redirect to login page after a short delay so the user can see the message
             setTimeout(() => {
                 navigate('/login');
-            }, 2000); // 2 seconds delay
+            }, 2000); // 2 seconds delay my ref
 
         } catch (error) {
             // If the API returns an error (e.g., user already exists)
@@ -104,66 +104,3 @@ export default RegisterPage;
 
 
 
-
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
-// import './RegisterPage.css'; 
-
-// const RegisterPage = () => {
-//     const [email, setEmail] = useState('');
-//     const [phoneNumber, setPhoneNumber] = useState('');
-//     const [password, setPassword] = useState('');
-//     const navigate = useNavigate();
-
-//     const handleRegister = (e) => {
-//         e.preventDefault();
-        
-//         console.log('Registering with:', { email, phoneNumber, password });
-        
-       
-//     };
-
-//     return (
-//         <div className="auth-container">
-//             <div className="auth-form-wrapper">
-//                 <div className="auth-header">
-//                     <Link to="/login" className="auth-link">Back</Link>
-//                     <Link to="/" className="auth-link">Home</Link>
-//                 </div>
-//                 <form className="auth-form" onSubmit={handleRegister}>
-//                     <h2>Register</h2>
-                    
-//                     <div className="form-group">
-//                         <label htmlFor="email">Email address</label>
-//                         <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-//                     </div>
-
-                    
-//                     <div className="form-group">
-//                         <label htmlFor="phoneNumber">Phone Number</label>
-//                         <input type="tel" id="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
-//                     </div>
-
-//                     <div className="form-group">
-//                         <label htmlFor="password">Password</label>
-//                         <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-//                     </div>
-                    
-//                     <div className="form-options">
-//                         <label>
-//                             <input type="checkbox" /> Remember me
-//                         </label>
-//                     </div>
-
-//                     <button type="submit" className="auth-button">Register</button>
-
-//                     <p className="auth-redirect">
-//                         Already have an account? <Link to="/login">Sign-In</Link>
-//                     </p>
-//                 </form>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default RegisterPage;
