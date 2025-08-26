@@ -1,0 +1,17 @@
+/* Reset default browser styles and set up a solid foundation */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Make sure the core elements can fill the screen height */
+  width: 100%;  /* Make sure the core elements can fill the screen width */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
