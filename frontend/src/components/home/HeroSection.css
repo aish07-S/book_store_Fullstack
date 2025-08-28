@@ -1,0 +1,86 @@
+/* /* client/src/components/home/HeroSection.css */
+
+.hero-container {
+    position: relative; /* Essential for absolute positioning of children */
+    width: 100%;
+    height: 450px; /* Fixed height for the entire hero section */
+    overflow: hidden; /* Hides any overflow, good for rounded corners if added */
+    /* Optional: Fallback background color if images don't load */
+    background-color: #4A6E8A; 
+}
+
+/* Ensure the react-slick slider component fills the entire hero-container */
+.hero-slider-background {
+    position: absolute; /* Take out of normal flow */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Fill the entire parent hero-container */
+    z-index: 1; /* Place slider behind the overlay content */
+}
+
+/* Ensure the inner elements of the slider also take full height */
+.hero-slider-background .slick-list,
+.hero-slider-background .slick-track,
+.hero-slider-background .slick-slide > div {
+    height: 100%;
+}
+
+/* Style for the actual image within each slide */
+.hero-slide-image {
+    width: 100%;
+    height: 100%; /* Image now takes 100% of its slide's height */
+    object-fit: cover; /* Cover the entire area without distortion */
+    object-position: center;
+}
+
+/* Content overlaid on the hero slider - now only the search bar */
+.hero-overlay-content {
+    position: absolute; /* Take out of normal flow */
+    bottom: 50px; /* Position 50px from the bottom edge */
+    left: 50%; /* Start at the horizontal center */
+    transform: translateX(-50%); /* Shift left by half its width to truly center */
+    width: 100%; /* Take full width for containing and centering search bar */
+    max-width: 600px; /* Constrain max width of the overlay */
+    padding: 0 20px; /* Add horizontal padding for smaller screens */
+    text-align: center; /* Center the search bar within this overlay */
+    z-index: 10; /* Ensure it's on top of the slider and background */
+}
+
+/* Styles for the search bar itself (flexbox layout) */
+.search-bar-container {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    padding: 5px;
+    max-width: 500px; /* Maximum width for the input + button group */
+    margin: 0 auto; /* Center the search bar horizontally within hero-overlay-content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    flex-grow: 1; /* Allows input to take up available space */
+    border-radius: 4px;
+}
+
+.search-button {
+    border: none;
+    background-color: #4A6E8A;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #3a566c;
+}

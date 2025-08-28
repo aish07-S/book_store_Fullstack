@@ -1,0 +1,12 @@
+/* AuthorCard.css now primarily acts as a base for styling */
+/* The specific layout for AuthorSection.css takes precedence for layout */
+.author-card {
+    /* No flex, width, height here as it's handled by AuthorSection.css */
+    /* Add general appearance here if needed */
+}
+.author-image {
+    /* Basic image styles, size handled by parent */
+}
+.author-name {
+    /* Basic name styles */
+}

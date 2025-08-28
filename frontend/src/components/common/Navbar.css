@@ -1,0 +1,80 @@
+/* ... (your existing Navbar.css content) ... */
+.navbar {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1400px; /* Match main content width */
+    padding: 0 24px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+.nav-item {
+    height: 80px;
+}
+
+.nav-link {
+    color: #555;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    transition: all 0.2s ease-out;
+    white-space: nowrap; /* Prevent menu items from wrapping */
+}
+
+.nav-link:hover {
+    color: #4A6E8A;
+    border-bottom: 3px solid #4A6E8A;
+}
+
+.nav-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-action-link {
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+}

@@ -1,0 +1,84 @@
+.book-section {
+    margin-bottom: 50px;
+}
+
+/* The layout for the half-background, half-scrollable design */
+.book-section-layout {
+    display: flex;
+    align-items: stretch; /* Stretch columns to same height */
+    height: 400px; /* Fixed height for the entire section container */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 8px; /* Rounded corners for the whole section */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Left half with the background image */
+.book-section-background-half {
+    flex: 0 0 50%; /* Takes exactly 50% of the width */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* Optional: add a subtle overlay to the background image */
+    background-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 50%);
+}
+
+/* Right half with the scrollable cards */
+.book-section-content-half {
+    flex: 1; /* Takes the remaining 50% */
+    background-color: #fff; /* White background for the content part */
+    position: relative;
+    z-index: 2; /* Ensure content is on top of the background */
+    margin-left: -150px; /* PULLS THE CONTENT OVER THE BACKGROUND IMAGE by 150px */
+    padding-left: 170px; /* Add padding to push the cards away from the edge of the background image */
+    display: flex;
+    align-items: center; /* Vertically center the scrollable content */
+}
+
+/* Styling for individual product cards within this section */
+.horizontal-scroll-container .product-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    height: 100%; /* Ensure cards take full height of scroll container */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.horizontal-scroll-container .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.horizontal-scroll-container .product-image {
+    width: 100%;
+    height: 180px; /* Adjust height for a better fit */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.horizontal-scroll-container .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+.horizontal-scroll-container .product-title {
+    font-size: 14px;
+    color: #666;
+    min-height: 40px; /* For consistent height */
+}
+
+/* Individual card sizing for horizontal scroll */
+.horizontal-scroll-container .product-card {
+    flex: 0 0 200px; /* Fixed width for each card, don't grow/shrink */
+    width: 200px; /* Explicit width */
+}
+
+.book-section-background-half {
+    flex: 0 0 50%; /* Takes 50% width and is fixed in size */
+    background-size: cover; /* Image covers the entire 50% area */
+    background-position: center; /* Image is centered */
+    background-repeat: no-repeat; /* Image does not repeat */
+    /* ... other styles ... */
+}

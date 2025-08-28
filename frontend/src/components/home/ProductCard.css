@@ -1,0 +1,94 @@
+/* Base styles for an individual product card */
+.product-card {
+    background-color: #ffffff; /* White background for the card */
+    border: 1px solid #e0e0e0; /* Subtle light grey border */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center all text and images */
+    padding: 15px; /* Internal padding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+    display: flex; /* Use flexbox for internal layout (image, price, title) */
+    flex-direction: column; /* Stack contents vertically */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Container for the product image */
+.product-image-container {
+    margin-bottom: 10px; /* Space below the image */
+    height: 180px; /* Fixed height for image container to align cards */
+    display: flex; /* Use flex to center the image if it's smaller */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Actual product image */
+.product-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    max-height: 100%; /* Ensure image fits within its container */
+    object-fit: contain; /* Contain the image within the space without cropping */
+    display: block; /* Remove extra space below image */
+}
+
+/* Product information (price and title) */
+.product-info {
+    flex-grow: 1; /* Allow info section to take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content to the bottom of the card */
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark grey for price */
+    margin: 5px 0; /* Vertical margin for price */
+}
+
+.product-title {
+    font-size: 14px;
+    color: #666; /* Medium grey for title */
+    min-height: 40px; /* Ensure consistent height for titles (2 lines) */
+    display: -webkit-box; /* For multi-line text truncation */
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* Container for the slider, to control its padding and positioning */
+.book-cards-slider-container {
+    padding: 0 40px; /* Space for the arrows */
+}
+
+/* --- react-slick specific styling for slides and cards --- */
+
+/* Each individual slide item provided by react-slick */
+.slick-slide {
+    padding: 0 10px; /* THIS IS KEY: Creates space BETWEEN the cards */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
+    /* Ensure the slide itself has a defined height, usually handled by slick */
+    height: auto; /* Allow height to adjust based on content if not fixed */
+}
+
+/* The direct child div inside slick-slide (which contains our ProductCard) */
+.slick-slide > div {
+    height: 100%; /* Ensure this div takes the full height of the slide */
+    display: flex; /* Use flex to align the ProductCard within it */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Our ProductCard component inside the slick slide */
+.slick-slide .product-card {
+    /* These properties ensure the card fills its allocated space in the slider */
+    width: 100%;
+    height: 100%;
+    /* Override any default background if necessary (though ProductCard.css should handle it) */
+    background-color: white; 
+}

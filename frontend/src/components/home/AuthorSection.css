@@ -1,0 +1,48 @@
+.author-section {
+    background-color: #f5f5f5; /* Light grey background for author section */
+    padding: 40px 0;
+    margin-top: 40px;
+    text-align: center; /* Center the title and scroll container */
+}
+
+/* Overwrite the generic section-title to center it */
+.author-section .section-title {
+    text-align: center;
+    margin-left: 0; /* Remove left margin from general section-title */
+    margin-bottom: 30px;
+}
+
+/* Center the author scroll container */
+.author-section .horizontal-scroll-container {
+    justify-content: center; /* Center items if there's space */
+    padding: 0 20px 20px; /* Add padding to sides for visual balance */
+}
+
+/* Author card specific styling */
+.author-card {
+    flex: 0 0 150px; /* Fixed width for author cards */
+    width: 150px; /* Explicit width */
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.author-card:hover {
+    transform: translateY(-5px);
+}
+
+.author-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px; /* Center image and add bottom margin */
+    border: 3px solid #fff; /* White border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.author-name {
+    font-weight: 500;
+    color: #444;
+    font-size: 15px;
+}
